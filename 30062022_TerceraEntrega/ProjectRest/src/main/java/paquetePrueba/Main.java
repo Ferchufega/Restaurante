@@ -38,9 +38,9 @@ public class Main {
 			response.type("application/json");
 		});
 
-		//get("/", (request, response) -> "Welcome\n" + response.raw() + "\nHey there!");
+		get("/", (request, response) -> "Welcome\n" + response.raw() + "\nHey there!");
 		
-	    get("/hello", (request, response) -> "Welcome. Hey there!");
+	    //get("/hello", (request, response) -> "Welcome. Hey there!");
 
 
 		/**
@@ -135,14 +135,14 @@ public class Main {
 							response.status(201); // Codigo de respuesta
 							return new Respuesta("Nuevo Rol agregado: " + rol.toString());
 						} else {
-							response.status(500); // Error 500: pérdida de conexión con servidor
+							response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
 							return new Respuesta("No se pudo agregar el Rol: " + rol.toString());
 						}
 
 					} catch (JsonParseException e) {
 						// TODO: handle exception
 						response.status(400);// Bad Request
-						return new Respuesta("El objeto JSON no es válido: <br/>" + e.getMessage());
+						return new Respuesta("El objeto JSON no es vÃ¡lido: <br/>" + e.getMessage());
 					} catch (SQLException e) {
 						// TODO: handle exception
 						response.status(404); // Not found
@@ -163,7 +163,7 @@ public class Main {
 
 					Rol rol = gson.fromJson(request.body(), Rol.class);
 
-					// Busca registro según el ID dado
+					// Busca registro segÃºn el ID dado
 					Integer rolID = Integer.parseInt(request.params(":id"));
 					rol.setRolID(rolID);
 
@@ -183,7 +183,7 @@ public class Main {
 						return new Respuesta("Registro actualizado");
 
 					} else {
-						response.status(500); // Error 500: pérdida de conexión con servidor
+						response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
 						return new Respuesta("No se pudo actualizar el Rol: " + rol.toString());
 					}
 
@@ -206,7 +206,7 @@ public class Main {
 
 				try {
 
-					// Busca registro según el ID dado
+					// Busca registro segÃºn el ID dado
 					Rol rol = servicio.ReadRow(Integer.parseInt(request.params(":id")));
 
 					if (rol != null) { // existe registro?
@@ -220,7 +220,7 @@ public class Main {
 							return new Respuesta("Registro eliminado");
 
 						} else {
-							response.status(500); // Error 500: pérdida de conexión con servidor
+							response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
 							return new Respuesta("No se pudo eliminar el Rol: " + rol.toString());
 						}
 
@@ -330,14 +330,14 @@ public class Main {
 							response.status(201); // Codigo de respuesta
 							return new Respuesta("Nueva marca agregada: " + marc.toString());
 						} else {
-							response.status(500); // Error 500: pérdida de conexión con servidor
+							response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
 							return new Respuesta("No se pudo agregar la marca: " + marc.toString());
 						}
 
 					} catch (JsonParseException e) {
 						// TODO: handle exception
 						response.status(400);// Bad Request
-						return new Respuesta("El objeto JSON no es válido: \n" + e.getMessage());
+						return new Respuesta("El objeto JSON no es vÃ¡lido: \n" + e.getMessage());
 					} catch (SQLException e) {
 						// TODO: handle exception
 						response.status(404); // Not found
@@ -359,7 +359,7 @@ public class Main {
 					Marca marc = gson.fromJson(request.body(), Marca.class);
 					int marcaID = Integer.parseInt(request.params(":id"));
 					marc.setMarcaID(marcaID);
-					// Busca registro según el ID dado
+					// Busca registro segÃºn el ID dado
 					// Marca marc = servicioM.ReadRow(Integer.parseInt(request.params(":id")));
 
 					// if (marc != null) { // existe registro?
@@ -376,7 +376,7 @@ public class Main {
 						return new Respuesta("Registro actualizado");
 
 					} else {
-						response.status(500); // Error 500: pérdida de conexión con servidor
+						response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
 						return new Respuesta("No se pudo actualizar la Marca: " + marc.toString());
 					}
 
@@ -399,7 +399,7 @@ public class Main {
 
 				try {
 
-					// Busca registro según el ID dado
+					// Busca registro segÃºn el ID dado
 					Marca mar = servicioM.ReadRow(Integer.parseInt(request.params(":id")));
 
 					if (mar != null) { // existe registro?
@@ -413,7 +413,7 @@ public class Main {
 							return new Respuesta("Registro eliminado");
 
 						} else {
-							response.status(500); // Error 500: pérdida de conexión con servidor
+							response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
 							return new Respuesta("No se pudo eliminar la Marca: " + mar.toString());
 						}
 
@@ -446,7 +446,7 @@ public class Main {
 			servicioCategoria = new OperacionCategoriaDB();
 
 			/**
-			 * retorna lista completa de Categoría
+			 * retorna lista completa de CategorÃ­a
 			 */
 			get("/categorias", (request, response) -> {
 
@@ -521,16 +521,16 @@ public class Main {
 
 						if (banInsercion) {
 							response.status(201); // Codigo de respuesta
-							return new Respuesta("Nueva categoría agregada: " + categ.toString());
+							return new Respuesta("Nueva categorÃ­a agregada: " + categ.toString());
 						} else {
-							response.status(500); // Error 500: pérdida de conexión con servidor
-							return new Respuesta("No se pudo agregar la categoría: " + categ.toString());
+							response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
+							return new Respuesta("No se pudo agregar la categorÃ­a: " + categ.toString());
 						}
 
 					} catch (JsonParseException e) {
 						// TODO: handle exception
 						response.status(400);// Bad Request
-						return new Respuesta("El objeto JSON no es válido: \n" + e.getMessage());
+						return new Respuesta("El objeto JSON no es vÃ¡lido: \n" + e.getMessage());
 					} catch (SQLException e) {
 						// TODO: handle exception
 						response.status(404); // Not found
@@ -552,7 +552,7 @@ public class Main {
 					Categoria categ = gson.fromJson(request.body(), Categoria.class);
 					int categoriaID = Integer.parseInt(request.params(":id"));
 					categ.setCategoriaID(categoriaID);
-					// Busca registro según el ID dado
+					// Busca registro segÃºn el ID dado
 					// Marca marc = servicioM.ReadRow(Integer.parseInt(request.params(":id")));
 
 					// if (marc != null) { // existe registro?
@@ -569,8 +569,8 @@ public class Main {
 						return new Respuesta("Registro actualizado");
 
 					} else {
-						response.status(500); // Error 500: pérdida de conexión con servidor
-						return new Respuesta("No se pudo actualizar la Categoría: " + categ.toString());
+						response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
+						return new Respuesta("No se pudo actualizar la CategorÃ­a: " + categ.toString());
 					}
 
 					/*
@@ -592,7 +592,7 @@ public class Main {
 
 				try {
 
-					// Busca registro según el ID dado
+					// Busca registro segÃºn el ID dado
 					Categoria categ = servicioCategoria.ReadRow(Integer.parseInt(request.params(":id")));
 
 					if (categ != null) { // existe registro?
@@ -606,13 +606,13 @@ public class Main {
 							return new Respuesta("Registro eliminado");
 
 						} else {
-							response.status(500); // Error 500: pérdida de conexión con servidor
-							return new Respuesta("No se pudo eliminar la Categoría: " + categ.toString());
+							response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
+							return new Respuesta("No se pudo eliminar la CategorÃ­a: " + categ.toString());
 						}
 
 					} else {
 						response.status(404); // Not found
-						return new Respuesta("No se pudo actualizar la Categoría: " + categ.toString());
+						return new Respuesta("No se pudo actualizar la CategorÃ­a: " + categ.toString());
 					}
 
 				} catch (SQLException e) {
@@ -716,14 +716,14 @@ public class Main {
 							response.status(201); // Codigo de respuesta
 							return new Respuesta("Nueva unidad de medida agregada: " + uMed.toString());
 						} else {
-							response.status(500); // Error 500: pérdida de conexión con servidor
+							response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
 							return new Respuesta("No se pudo agregar la unidad de medida: " + uMed.toString());
 						}
 
 					} catch (JsonParseException e) {
 						// TODO: handle exception
 						response.status(400);// Bad Request
-						return new Respuesta("El objeto JSON no es válido: \n" + e.getMessage());
+						return new Respuesta("El objeto JSON no es vÃ¡lido: \n" + e.getMessage());
 					} catch (SQLException e) {
 						// TODO: handle exception
 						response.status(404); // Not found
@@ -745,7 +745,7 @@ public class Main {
 					UnidadMedida uMed = gson.fromJson(request.body(), UnidadMedida.class);
 					int unidadMedidaID = Integer.parseInt(request.params(":id"));
 					uMed.setUnidadMedidaID(unidadMedidaID);
-					// Busca registro según el ID dado
+					// Busca registro segÃºn el ID dado
 					// Marca marc = servicioM.ReadRow(Integer.parseInt(request.params(":id")));
 
 					// if (marc != null) { // existe registro?
@@ -762,7 +762,7 @@ public class Main {
 						return new Respuesta("Registro actualizado");
 
 					} else {
-						response.status(500); // Error 500: pérdida de conexión con servidor
+						response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
 						return new Respuesta("No se pudo actualizar la Unidad de Medida: " + uMed.toString());
 					}
 
@@ -785,7 +785,7 @@ public class Main {
 
 				try {
 
-					// Busca registro según el ID dado
+					// Busca registro segÃºn el ID dado
 					UnidadMedida uMed = servicioUMed.ReadRow(Integer.parseInt(request.params(":id")));
 
 					if (uMed != null) { // existe registro?
@@ -799,7 +799,7 @@ public class Main {
 							return new Respuesta("Registro eliminado");
 
 						} else {
-							response.status(500); // Error 500: pérdida de conexión con servidor
+							response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
 							return new Respuesta("No se pudo eliminar la Unidad de Medida: " + uMed.toString());
 						}
 
@@ -907,16 +907,16 @@ public class Main {
 
 						if (banInsercion) {
 							response.status(201); // Codigo de respuesta
-							return new Respuesta("Nuevo Tipo de operación agregado: " + tOper.toString());
+							return new Respuesta("Nuevo Tipo de operaciÃ³n agregado: " + tOper.toString());
 						} else {
-							response.status(500); // Error 500: pérdida de conexión con servidor
-							return new Respuesta("No se pudo agregar el Tipo de operación: " + tOper.toString());
+							response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
+							return new Respuesta("No se pudo agregar el Tipo de operaciÃ³n: " + tOper.toString());
 						}
 
 					} catch (JsonParseException e) {
 						// TODO: handle exception
 						response.status(400);// Bad Request
-						return new Respuesta("El objeto JSON no es válido: \n" + e.getMessage());
+						return new Respuesta("El objeto JSON no es vÃ¡lido: \n" + e.getMessage());
 					} catch (SQLException e) {
 						// TODO: handle exception
 						response.status(404); // Not found
@@ -938,7 +938,7 @@ public class Main {
 					TipoOperacion tOper = gson.fromJson(request.body(), TipoOperacion.class);
 					int tipoOperacionID = Integer.parseInt(request.params(":id"));
 					tOper.setTipoOperacionID(tipoOperacionID);
-					// Busca registro según el ID dado
+					// Busca registro segÃºn el ID dado
 					// Marca marc = servicioM.ReadRow(Integer.parseInt(request.params(":id")));
 
 					// if (marc != null) { // existe registro?
@@ -955,8 +955,8 @@ public class Main {
 						return new Respuesta("Registro actualizado");
 
 					} else {
-						response.status(500); // Error 500: pérdida de conexión con servidor
-						return new Respuesta("No se pudo actualizar el tipo de operación: " + tOper.toString());
+						response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
+						return new Respuesta("No se pudo actualizar el tipo de operaciÃ³n: " + tOper.toString());
 					}
 
 					/*
@@ -978,7 +978,7 @@ public class Main {
 
 				try {
 
-					// Busca registro según el ID dado
+					// Busca registro segÃºn el ID dado
 					TipoOperacion tOper = servicioTOper.ReadRow(Integer.parseInt(request.params(":id")));
 
 					if (tOper != null) { // existe registro?
@@ -992,13 +992,13 @@ public class Main {
 							return new Respuesta("Registro eliminado");
 
 						} else {
-							response.status(500); // Error 500: pérdida de conexión con servidor
-							return new Respuesta("No se pudo eliminar el tipo de operación: " + tOper.toString());
+							response.status(500); // Error 500: pÃ©rdida de conexiÃ³n con servidor
+							return new Respuesta("No se pudo eliminar el tipo de operaciÃ³n: " + tOper.toString());
 						}
 
 					} else {
 						response.status(404); // Not found
-						return new Respuesta("No se pudo actualizar el tipo de operación: " + tOper.toString());
+						return new Respuesta("No se pudo actualizar el tipo de operaciÃ³n: " + tOper.toString());
 					}
 
 				} catch (SQLException e) {
