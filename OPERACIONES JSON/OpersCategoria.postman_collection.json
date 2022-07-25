@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "4dc07456-f6b3-4212-a798-6d79ea75dffb",
+		"name": "OpersCategoria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21262398"
+	},
+	"item": [
+		{
+			"name": "GetCategoria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4567/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCategoriaPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4567/categoria/ingresarNro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"categoria",
+						"ingresarNro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostCategoria",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descripcion\":\"descripcionNueva\",\r\n    \"activo\":\"valorNuevo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4567/categoria/agregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"categoria",
+						"agregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutCategoria",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descripcion\":\"actualizarCategoria\",\r\n    \"activo\":\"actualizarValor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4567/categoria/actualizar/ingresaNro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"categoria",
+						"actualizar",
+						"ingresaNro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCategoria",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4567/categoria/eliminar/ingresarNro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"categoria",
+						"eliminar",
+						"ingresarNro"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

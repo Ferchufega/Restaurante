@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "2967232a-b184-4ed1-86c8-b48437a8240c",
+		"name": "OpersUnidadMedida",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21262398"
+	},
+	"item": [
+		{
+			"name": "GetUnidadMedida",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4567/unidadesmedida",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"unidadesmedida"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUMedidaPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4567/unidadmedida/ingresarNro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"unidadmedida",
+						"ingresarNro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostUnidadMedida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descripcion\":\"descripcionNueva\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4567/unidadmedida/agregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"unidadmedida",
+						"agregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutUnidadMedida",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descripcion\":\"actualizarUnidadMedida\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4567/unidadmedida/actualizar/ingresaNro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"unidadmedida",
+						"actualizar",
+						"ingresaNro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUnidadMedida",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4567/unidadmedida/eliminar/ingresarNro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4567",
+					"path": [
+						"unidadmedida",
+						"eliminar",
+						"ingresarNro"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

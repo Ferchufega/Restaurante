@@ -1,0 +1,25 @@
+
+OPERACIONES
+
+================================================================================
+
+INSTRUCCIONES:
+--------------
+Los siguientes son enlaces para crear de forma directa y automática los "requests" para ejecutar las operaciones del Software.
+
+Importar enlaces JSON a Postman desde Colección --> Import --> Pestaña "Link"
+
+================================================================================
+
+TABLAS:
+--------
+
+- Rol: https://www.getpostman.com/collections/e88b09265043f74aad44
+
+- Marca: https://www.getpostman.com/collections/deb188a06ebc7462175b
+
+- Categoría: https://www.getpostman.com/collections/6fc201aada31830aa9b1
+
+- Unidad de medida: https://www.getpostman.com/collections/ea1edf9cd5b51ae5f16f
+	
+- Tipos de operación: https://www.getpostman.com/collections/547fb790dc20fb0ced70
