@@ -1,0 +1,16 @@
+
+Enlace para acceder al sistema:
+--------------------------------
+	https://app-rest22.herokuapp.com/index.html#
+
+En caso de querer probar el funcionamiento de la aplicación, favor contactarse con cualquiera de los alumnos desarrolladores:
+-----------------------------------------------------------------------------------------------------------------------------
+• Cristhian Rolón
+	- Email: chrisdanielbenee@gmail.com
+
+• Fernando Ferreira
+	- Email: ferchufega@gmail.com;
+		 fernferreira@uaa.edu.py;
+
+	- Celular: 0986 121508
+
